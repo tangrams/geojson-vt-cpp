@@ -57,14 +57,18 @@ GeoJSONVT::GeoJSONVT(const std::vector<ProjectedFeature>& features_,
       debug(debug_) {
 
     if (this->debug) {
-        Time::time("generate tiles up to z" + std::to_string(maxZoom));
+        char num[8];
+        snprintf(num, 8, "%d", maxZoom);
+        Time::time(std::string{ "generate tiles up to z" } + num);
     }
 
     splitTile(features_, 0, 0, 0);
 
     if (this->debug) {
         printf("features: %i, points: %i\n", this->tiles[0].numFeatures, this->tiles[0].numPoints);
-        Time::timeEnd("generate tiles up to z" + std::to_string(maxZoom));
+        char num[8];
+        snprintf(num, 8, "%d", maxZoom);
+        Time::timeEnd(std::string{ "generate tiles up to z" } + num);
         printf("tiles generated: %i {\n", this->total);
         for (const auto& pair : this->stats) {
             printf("    z%i: %i\n", pair.first, pair.second);

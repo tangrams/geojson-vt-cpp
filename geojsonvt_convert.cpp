@@ -1,6 +1,7 @@
 #include "geojsonvt_convert.hpp"
 #include "geojsonvt_simplify.hpp"
 
+#include <cstdio>
 #include <array>
 #include <cmath>
 #include <vector>
