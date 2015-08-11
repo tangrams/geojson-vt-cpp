@@ -71,8 +71,8 @@ void Convert::convertFeature(std::vector<ProjectedFeature>& features,
         if (geom.HasMember("coordinates")) {
             const JSValue& rawCoordinates = geom["coordinates"];
             if (rawCoordinates.IsArray()) {
-                coordinates[0] = rawCoordinates[(rapidjson::SizeType)0].GetDouble();
-                coordinates[1] = rawCoordinates[(rapidjson::SizeType)1].GetDouble();
+                coordinates[0] = rawCoordinates[static_cast<rapidjson::SizeType>(0)].GetDouble();
+                coordinates[1] = rawCoordinates[static_cast<rapidjson::SizeType>(1)].GetDouble();
             }
         }
         ProjectedPoint point = projectPoint(LonLat(coordinates));
@@ -93,8 +93,8 @@ void Convert::convertFeature(std::vector<ProjectedFeature>& features,
                     std::array<double, 2> coordinates = { { 0, 0 } };
                     const JSValue& rawCoordinates = rawCoordinatePairs[i];
                     if (rawCoordinates.IsArray()) {
-                        coordinates[0] = rawCoordinates[(rapidjson::SizeType)0].GetDouble();
-                        coordinates[1] = rawCoordinates[(rapidjson::SizeType)1].GetDouble();
+                        coordinates[0] = rawCoordinates[static_cast<rapidjson::SizeType>(0)].GetDouble();
+                        coordinates[1] = rawCoordinates[static_cast<rapidjson::SizeType>(1)].GetDouble();
                     }
                     points.push_back(LonLat(coordinates));
                 }
@@ -116,8 +116,8 @@ void Convert::convertFeature(std::vector<ProjectedFeature>& features,
                     std::array<double, 2> coordinates = { { 0, 0 } };
                     const JSValue& rawCoordinates = rawCoordinatePairs[i];
                     if (rawCoordinates.IsArray()) {
-                        coordinates[0] = rawCoordinates[(rapidjson::SizeType)0].GetDouble();
-                        coordinates[1] = rawCoordinates[(rapidjson::SizeType)1].GetDouble();
+                        coordinates[0] = rawCoordinates[static_cast<rapidjson::SizeType>(0)].GetDouble();
+                        coordinates[1] = rawCoordinates[static_cast<rapidjson::SizeType>(1)].GetDouble();
                     }
                     points.push_back(LonLat(coordinates));
                 }
@@ -142,8 +142,8 @@ void Convert::convertFeature(std::vector<ProjectedFeature>& features,
                             std::array<double, 2> coordinates = { { 0, 0 } };
                             const JSValue& rawCoordinates = rawCoordinatePairs[j];
                             if (rawCoordinates.IsArray()) {
-                                coordinates[0] = rawCoordinates[(rapidjson::SizeType)0].GetDouble();
-                                coordinates[1] = rawCoordinates[(rapidjson::SizeType)1].GetDouble();
+                                coordinates[0] = rawCoordinates[static_cast<rapidjson::SizeType>(0)].GetDouble();
+                                coordinates[1] = rawCoordinates[static_cast<rapidjson::SizeType>(1)].GetDouble();
                             }
                             points.push_back(LonLat(coordinates));
                         }
@@ -175,8 +175,8 @@ void Convert::convertFeature(std::vector<ProjectedFeature>& features,
                         std::array<double, 2> coordinates = { { 0, 0 } };
                         const JSValue& rawCoordinatePairs = rawLines[i];
                         if (rawCoordinatePairs.IsArray()) {
-                            coordinates[0] = rawCoordinatePairs[(rapidjson::SizeType)0].GetDouble();
-                            coordinates[1] = rawCoordinatePairs[(rapidjson::SizeType)1].GetDouble();
+                            coordinates[0] = rawCoordinatePairs[static_cast<rapidjson::SizeType>(0)].GetDouble();
+                            coordinates[1] = rawCoordinatePairs[static_cast<rapidjson::SizeType>(1)].GetDouble();
                         }
                         points.push_back(LonLat(coordinates));
                     }

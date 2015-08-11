@@ -3,7 +3,10 @@
 
 #include "geojsonvt_types.hpp"
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wold-style-cast"
 #include <rapidjson/document.h>
+#pragma GCC diagnostic pop
 
 #include <vector>
 
