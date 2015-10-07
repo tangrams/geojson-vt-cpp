@@ -3,9 +3,14 @@
 
 #include <mapbox/variant.hpp>
 
-#include <array>
-#include <map>
+#if defined(GEOJSONVT_CUSTOM_TAGS)
+#include "geojsonvt_custom_tags.hpp"
+#else
 #include <string>
+#include <map>
+#endif
+
+#include <array>
 #include <vector>
 
 namespace mapbox {
@@ -73,7 +78,9 @@ public:
 
 #pragma mark -
 
+#if !defined(GEOJSONVT_CUSTOM_TAGS)
 using Tags = std::map<std::string, std::string>;
+#endif
 
 #pragma mark -
 
