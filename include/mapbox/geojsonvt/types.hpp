@@ -1,6 +1,10 @@
 #ifndef MAPBOX_GEOJSONVT_TYPES
 #define MAPBOX_GEOJSONVT_TYPES
 
+#if defined(GEOJSONVT_CUSTOM_TAGS)
+#include "geojsonvt_custom_tags.hpp"
+#else
+
 #include <mapbox/variant.hpp>
 
 #include <array>
@@ -71,7 +75,9 @@ using ProjectedGeometry = mapbox::util::variant<ProjectedPoints, ProjectedRings>
 
 #pragma mark -
 
+#if !defined(GEOJSONVT_CUSTOM_TAGS)
 using Tags = std::map<std::string, std::string>;
+#else
 
 #pragma mark -
 
