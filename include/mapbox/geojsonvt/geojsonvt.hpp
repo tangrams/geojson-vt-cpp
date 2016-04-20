@@ -78,7 +78,7 @@ private:
     const bool solidChildren;      // whether to tile solid square tiles further
     const double tolerance;        // simplification tolerance (higher means simpler)
     const uint16_t extent = 4096;  // tile extent
-    const uint8_t buffer = 64;     // tile buffer on each side
+    const uint8_t buffer = 0;      // tile buffer on each side
     std::map<uint64_t, Tile> tiles;
     std::map<uint8_t, uint16_t> stats;
     uint64_t total = 0;
