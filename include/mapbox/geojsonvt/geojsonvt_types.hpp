@@ -28,7 +28,7 @@ struct LonLat {
     double lat;
 };
 
-#pragma mark -
+
 
 class ProjectedPoint;
 class ProjectedGeometryContainer;
@@ -36,11 +36,11 @@ class ProjectedGeometryContainer;
 using ProjectedGeometry =
     mapbox::util::variant<geojsonvt::ProjectedPoint, geojsonvt::ProjectedGeometryContainer>;
 
-#pragma mark -
+
 
 class ProjectedPoint {
 public:
-    inline __attribute__((visibility("default"))) ProjectedPoint(double x_ = -1, double y_ = -1, double z_ = -1) : x(x_), y(y_), z(z_) {
+    inline ProjectedPoint(double x_ = -1, double y_ = -1, double z_ = -1) : x(x_), y(y_), z(z_) {
     }
 
     inline bool isValid() const {
@@ -61,7 +61,7 @@ public:
     double z = -1;
 };
 
-#pragma mark -
+
 
 class ProjectedGeometryContainer {
 public:
@@ -76,17 +76,17 @@ public:
     double dist = 0;
 };
 
-#pragma mark -
+
 
 #if !defined(GEOJSONVT_CUSTOM_TAGS)
 using Tags = std::map<std::string, std::string>;
 #endif
 
-#pragma mark -
+
 
 enum class ProjectedFeatureType : uint8_t { Point = 1, LineString = 2, Polygon = 3 };
 
-#pragma mark -
+
 
 class ProjectedFeature {
 public:
@@ -106,14 +106,14 @@ public:
     ProjectedPoint max;
 };
 
-#pragma mark -
+
 
 class TilePoint;
 class TileRing;
 
 using TileGeometry = mapbox::util::variant<geojsonvt::TilePoint, geojsonvt::TileRing>;
 
-#pragma mark -
+
 
 class TilePoint {
 public:
@@ -125,18 +125,18 @@ public:
     const int16_t y = 0;
 };
 
-#pragma mark -
+
 
 class TileRing {
 public:
     std::vector<TilePoint> points;
 };
 
-#pragma mark -
+
 
 typedef ProjectedFeatureType TileFeatureType;
 
-#pragma mark -
+
 
 class TileFeature {
 public:
