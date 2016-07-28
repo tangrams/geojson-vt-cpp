@@ -320,7 +320,7 @@ TilePoint GeoJSONVT::transformPoint(
 }
 
 uint64_t GeoJSONVT::toID(uint8_t z, uint32_t x, uint32_t y) {
-    return (((1 << z) * y + x) * 32) + z;
+    return (((uint64_t(1) << z) * y + x) * 32) + z;
 }
 
 ProjectedPoint GeoJSONVT::intersectX(const ProjectedPoint& a, const ProjectedPoint& b, double x) {
