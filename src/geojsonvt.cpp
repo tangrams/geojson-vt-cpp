@@ -13,8 +13,6 @@ namespace geojsonvt {
 
 std::unordered_map<std::string, clock_t> Time::activities;
 
-#pragma mark - GeoJSONVT
-
 std::vector<ProjectedFeature>
 GeoJSONVT::convertFeatures(const std::string& data, uint8_t maxZoom, double tolerance) {
 #ifdef DEBUG
