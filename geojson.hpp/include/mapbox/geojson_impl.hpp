@@ -398,8 +398,8 @@ rapidjson_value convert<feature>(const feature& element, rapidjson_allocator& al
     rapidjson_value result(rapidjson::kObjectType);
     result.AddMember("type", "Feature", allocator);
 
-    if (element.id) {
-        result.AddMember("id", identifier::visit(*element.id, to_value { allocator }), allocator);
+    if (!element.id.is<null_value_t>()) {
+        result.AddMember("id", identifier::visit(element.id, to_value { allocator }), allocator);
     }
 
     result.AddMember("geometry", convert(element.geometry, allocator), allocator);
