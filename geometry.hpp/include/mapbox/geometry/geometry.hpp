@@ -31,7 +31,9 @@ template <typename T>
 struct geometry : geometry_base<T>
 {
     using coordinate_type = T;
-    using geometry_base<T>::geometry_base;
+
+    template <typename U>
+    geometry(U&& val): geometry_base<T>(val) {}
 
     /*
      * The default constructor would create a point geometry with default-constructed coordinates;

@@ -37,7 +37,8 @@ using value_base = mapbox::util::variant<null_value_t, bool, uint64_t, int64_t, 
 
 struct value : value_base
 {
-    using value_base::value_base;
+    template< typename T >
+    value(T&& val): value_base(val) {}
 };
 
 using property_map = std::unordered_map<std::string, value>;
