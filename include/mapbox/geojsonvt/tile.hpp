@@ -96,19 +96,19 @@ private:
     }
 
     void addFeature(const vt_point& point, const property_map& props, const identifier& id) {
-        tile.features.push_back({ transform(point), props, id });
+        tile.features.emplace_back( transform(point), props, id );
     }
 
     void addFeature(const vt_line_string& line, const property_map& props, const identifier& id) {
         const auto new_line = transform(line);
         if (!new_line.empty())
-            tile.features.push_back({ std::move(new_line), props, id });
+            tile.features.emplace_back( std::move(new_line), props, id );
     }
 
     void addFeature(const vt_polygon& polygon, const property_map& props, const identifier& id) {
         const auto new_polygon = transform(polygon);
         if (!new_polygon.empty())
-            tile.features.push_back({ std::move(new_polygon), props, id });
+            tile.features.emplace_back( std::move(new_polygon), props, id );
     }
 
     void addFeature(const vt_geometry_collection& collection, const property_map& props, const identifier& id) {
